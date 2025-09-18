@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/example.js"></script>
+  </head>
+  <body>
+    <script>
+      var num1 = 100;
+      var str1 = "kor";
+      document.write(typeof num1, "<br>"); //number
+      document.write(typeof str1, "<br>"); //string
+
+      let name = "홍길동";
+      let str = `내 이름은 ${name} 입니다. <br>
+      제 나이는 ${10 + 3} 입니다.`; // 작은따옴표 ('')아닌 백틱(`) 사용
+      document.write(str, "<br>");
+
+      var num2 = 100;
+      var numstr2 = "100";
+      document.write(num2 == numstr2, "<br>"); // 타입상관없이 값만 비교(==) → true
+      document.write(num2 === numstr2, "<br>"); // 타입까지 고려해서 비교(===)  → false
+
+      var age = prompt("당신의 나이는??", "0");
+      if (age >= 20) {
+        alert("성인입니다!"); // 경고창 - 확인만있음
+        document.write("당신은 성인입니다.", "<br>");
+      } else {
+        var confirmResult = confirm("미성년자입니다!"); // 확인,취소있음, 값을 받을 수 있다.
+        //confirm = 확인: true 반환, 취소:flase 반환
+        document.write(confirmResult, "당신은 미성년자입니다.", "<br>");
+      }
+
+      var result1 = 100 > 50? "참" : "거짓"; //삼항 조건 연산자
+      document.write(result1,"<br>");
+
+
+      //자바의 향상된 for문과 비슷한 문법
+      var arr = [10,20,30,]; //int[] arr = [10,20,30];
+      for(var i=1;i<=arr.length;i++){
+        document.write(arr.[i]);
+      }
+      for(var i of arr){
+        document.write(i);
+      }
+
+      for(i in arr){
+        document.write([i]);
+      }
+    </script>
+  </body>
+</html>

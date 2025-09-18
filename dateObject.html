@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var today = new Date(); // 날짜 객체 선언
+      var getFullYear = today.getFullYear(); // 현재연도
+      var nowMonth = today.getMonth(); // 현재월
+      var nowDate = today.getDate(); // 현재날짜
+      var nowDay = today.getDay(); // 요일(일요일:0,...)
+
+      document.write(today, "<br>");
+      document.write(nowMoth, "<br>");
+      document.write(nowDate, "<br>");
+      document.write(nowDay, "<br>");
+
+      //예약일
+      var reservationDate = new Date(nowYear, 11, 25); //12월 25일
+      var sdirrDate = reservationDate.getTime() - today.getDate; //남은 날짜 - < 남은 밀리초
+    </script>
+  </body>
+</html>

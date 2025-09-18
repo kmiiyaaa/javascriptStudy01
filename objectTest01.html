@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var tv = new Object(); // 기본 객체 Object 객체 생성
+      tv.color = "white";
+      tv.price = "300000";
+      tv.info = function () {
+        document.writeln("tv 색상 : " + this.color); //그냥 color라고 쓰면 아무것도 출력x
+        document.writeln("tv 가격 : " + this.price);
+      };
+
+      tv.info();
+
+      var car = {
+        color: "black",
+        price: 500000,
+        info: function () {
+          document.writeln("차 색상 :" + this.color);
+          document.writeln("차 가격 : " + this.price);
+        },
+      };
+
+      car.info();
+    </script>
+  </body>
+</html>

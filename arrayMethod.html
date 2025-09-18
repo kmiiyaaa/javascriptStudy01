@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr_1 = ["사당", "교대", "방배", "강남"];
+      var arr_2 = ["신사", "옥수", "압구정"];
+
+      var result = arr_1.join("-");
+      document.write(result);
+      console.log(result); // 웹브라우저 콘솔창(f12)에 출력
+
+      var result = arr_1.concat(arr_2); // 2개의 배열 합치기
+      console.log(result);
+
+      var result = arr_1.slice(1, 3); // 배열 요소 중 인덱스 1,2만 추출
+      console.log(result);
+
+      var result = arr_1.sort(); // 배열 요소 오름차순 정렬 -> 원본이 변경됨
+      console.log(result);
+      document.write("<br>", result);
+      console.log(arr_1);
+
+      console.log(arr_2.reverse()); // 내림차순 정렬 -> 원본이 변경됨
+      console.log(arr_2);
+
+      console.log(arr_1.pop()); // 제일 마지막 요소 추출후 해당 요소 제거(잘라내기) - 원본에서 지워진다
+      console.log(arr_1);
+
+      console.log(arr_1.push("신촌")); // 배열의 마지막 요소로 새로 삽입
+      console.log(arr_1);
+
+      console.log(arr_1.unshift("종로")); // 배열의 첫 요소로 새로 삽입
+      console.log(arr_1);
+
+      console.log(arr_1.shift()); //첫번째 요소 추출 후 해당요소 제거 -> pop의 반대
+      console.log(arr_1);
+
+      console.log(arr_1.length); // 배열의 길이 (총 데이터 갯수 반환)
+
+      console.log(arr_1.splice(1, 2)); //해당 인덱스 범위 요소를 추출 후 해당 요소들을 제거
+      console.log(arr_1);
+
+      //arr_2 : [신사, 옥수 , 압구정]
+      console.log(arr_2.splice(1, 0, "용산", "마포")); // 0-> 삭제 없이 추가 옵셥
+      console.log(arr_2);
+      //arr_2 : ['압구정', '용산', '마포', '옥수', '신사']
+      console.log(arr_2.splice(1, 1, "합정")); // 1-> 삭제 후 추가 옵션
+      console.log(arr_2);
+      //splice -> 삭제, 추가, 교체, 삭제된 값을 반환
+    </script>
+  </body>
+</html>
