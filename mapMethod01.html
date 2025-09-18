@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map 메서드 연습<title>
+</head>
+<body>
+    <script>
+        let arr = [10,20,30];
+        let arr2 = arr.map((num) => (num/10));
+        console.log(arr2);
+        consile.log(arr); //원본 배열은 변화 없음
+
+        let strArr = ["abc", "asd", "dfg"];
+        let strArr2 = strArr.map(str => str.toUpperCase());
+        console.log(strArr2);
+
+        let numbers = [10,20,30];
+        let numbers2= numbers.map((value,idx) => value + idx);
+        console.log(numbers2);
+       
+        let strArr3 = ["kor","usa","jap"];
+        let kor = strArr3.some(nation => nation === "kor");  //하나라도 일치하면 true -> true
+
+
+    </script>
+    
+</body>
+</html>
