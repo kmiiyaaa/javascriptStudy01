@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //동기 방식
+      console.log("작업 A시작");
+      console.log("작업 B시작");
+      console.log("작업 C시작");
+
+      //비동기 방식
+      console.log("작업A시작");
+      setTimeout(() => {
+        console.log("작업 B 실행(2초 후 완료)"); //전 단계 작업완료를 기다리지 않고 2초 후에 코드를 바로 실행
+      }, 2000);
+      console.log("작업 C시작");
+
+      //비옫기 방식
+      setTimeout(() => {
+        console.log("1초후 실행"); //A작업
+        setTimeout(() => {
+          console.log("2초후 실행"); //B작업
+          setTimeout(() => {
+            console.log("3초후 실행"); //C작업
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    </script>
+  </body>
+</html>

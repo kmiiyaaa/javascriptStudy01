@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //동기 방식
+      console.log("1번 작업");
+      console.log("2번 작업(오래걸리는 작업)");
+      console.log("3번 작업"); // 2번 작업 끝난 후 실행
+
+      //비동기 방식(setTimeout 방식 사용)
+      console.log("1번 작업");
+      setTimeout(() => {
+        console.log("2번 작업(오래걸리는 작업)");
+      }, 3000); // 3초
+      console.log("3번 작업");
+      console.log("모든작업 끝!");
+
+      //비동기 방식(promise 방식 사용)
+      function promiseWait(ms) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("2번 작업(오래걸리는 작업)");
+          }, ms);
+        });
+      }
+
+      console.log("1번 작업");
+      promiseWait(3000).then((msg) => {
+        console.log(msg);
+      });
+      console.log("3번 작업"); // 2번 작업 끝난 후 실행
+      console.log("모든작업 끝!"); // 2번 작업 끝난 후 실행
+
+      //비동기 방식(async함수와 await 키워드)  - 순서는 동기방식처럼 1,2,3실행이지만 미리 오래걸리는거 알려줘서 ,
+      // 나머지작업은 기다리고 , 프로그램이 멈추진 않는다 (동기방식은 오래걸리면 멈출 수 있음)
+      function promiseWait(ms) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("2번 작업(오래걸리는 작업)");
+          }, ms);
+        });
+      }
+      async function run() {
+        // async 함수 -> 오래 걸리는 작업이 중간에 있음 표시
+        // await 키워드 -> 끝날때까지 기다렸다가 다음 줄 실행
+        console.log("1번 작업");
+
+        const msg = await promiseWait(3000); //작업 끝날때까지 기다리기!- 명령
+        console.log(msg);
+
+        console.log("3번 작업"); // } 밑으로 내리면 2번작업보다 먼저 실행, 안쪽에 있으면 2번끝난 후 실행
+        console.log("모든작업 끝!");
+      }
+      run();
+    </script>
+  </body>
+</html>
