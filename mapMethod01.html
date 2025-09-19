@@ -13,7 +13,7 @@
         consile.log(arr); //원본 배열은 변화 없음
 
         let strArr = ["abc", "asd", "dfg"];
-        let strArr2 = strArr.map(str => str.toUpperCase());
+        let strArr2 = strArr.map(str => str.toUpperCase());   // return str.toUpperCase(); 처럼 생각하면 됨
         console.log(strArr2);
 
         let numbers = [10,20,30];
@@ -22,6 +22,13 @@
        
         let strArr3 = ["kor","usa","jap"];
         let kor = strArr3.some(nation => nation === "kor");  //하나라도 일치하면 true -> true
+
+        
+        function add1(x,y){
+            return x+y;
+        }
+
+        const add2 = (x,y) => x+y; 
 
 
     </script>

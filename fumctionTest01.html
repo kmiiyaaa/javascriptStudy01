@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //매개변수 있는 경우
+      function sum(a, b) {
+        document.write(a + b, "<br>");
+      }
+
+      sum(10, 20);
+
+      //매개변수 없는 경우
+      function sum2() {
+        document.write(arguments[0] + arguments[1] + "<br>");
+      }
+
+      sum2(10, 20);
+
+      function sum3() {
+        //soft한 코딩 -> 매개변수를 가변적으로 구성
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          sum = sum + arguments[i];
+        }
+
+        document.write(sum + "<br>");
+      }
+      sum3(10, 20, 30);
+      sum3(10, 20, 30, 40);
+      sum3(10, 20, 30, 40, 50);
+    </script>
+  </body>
+</html>
