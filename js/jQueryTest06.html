@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(function () {
+        $("#menu li:first").css("background-color", "pink");
+        $("#menu li:last").css("background-color", "gray");
+        $("#menu li:even").css("background-color", "red"); //인덱스로 짝수
+        $("#menu li:odd").css("background-color", "blue"); //인덱스로 홀수
+        $("#menu2 li").eq(2).css("background-color", "pink"); //인덱스로 한개만 선택
+        $("#menu2 li:lt(2)").css("background-color", "green"); // 인덱스2보다 작은 인덱스 요소들 선택
+        $("#menu2 li:gt(2)").css("background-color", "blue"); // 인덱스2보다 큰 인덱스 요소들 선택
+      });
+    </script>
+  </head>
+  <body>
+    <h1>탐색 선택자1</h1>
+    <ul id="menu">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+      <li>내용4</li>
+    </ul>
+    <h1>탐색 선택자2</h1>
+    <ul id="menu2">
+      <li>내용5</li>
+      <li>내용6</li>
+      <li>내용7</li>
+      <li>내용8</li>
+    </ul>
+  </body>
+</html>

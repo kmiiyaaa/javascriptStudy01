@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+      $(function () {
+        var arr1 = [
+          { area: "서울", name: "무대리" },
+          { area: "부산", name: "홍과장" },
+          { area: "대전", name: "박사장" },
+          { area: "서울", name: "빅마마" },
+        ];
+
+        var resultArr1 = $.map(arr1, function (a, b) {
+          // 값 변환
+          if (a.area == "서울") {
+            return a;
+          }
+        });
+
+        console.log(resultArr1);
+
+        var resultArr2 = $.grep(arr1, function (a, b) {
+          //값 필터링 (걸러냄)
+          if (a.area == "서울") {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log(resultArr2);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
