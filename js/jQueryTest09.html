@@ -32,8 +32,52 @@
           }
         });
         console.log(resultArr2);
+
+        var numbers = [1, 2, 3, 4, 5];
+
+        var result1 = $.map(numbers, function (number) {
+          // 함수식으로 새로운 값을 만들어서 새로운 배열로 반환
+          return number * 2;
+        });
+
+        console.log(result1);
+
+        var result2 = $.grep(numbers, function (number) {
+          // 조건식으로 반환(true/fasle) - 조건에 맞지 않는 데이터 걸러냄
+          return number % 2 == 0;
+        });
+        console.log(result2);
+
+        $(function () {
+          var arr_1 = ["서울", "대전", "부산", "전주"];
+          var arr_2 = ["한국", "미국", "일본", "중국"];
+          var obj = {
+            name: "정부장",
+            area: "서울",
+          }; // 자바의 클래스로 선언한 객체
+          var idxNum = $.inArray("부산", arr_1); // 해당 배열에 데이터가 존재시 인덱스 반환(존재하지 않으면 -1 반환)
+          console.log(idxNum);
+          var okArray1 = $.isArray(arr_1); // 배열 여부 확인 - 배열이면 true
+          var okArray2 = $.isArray(obj); // false
+          console.log(okArray1);
+          console.log(okArray2);
+
+          var idxNum2 = $("li").index($("#list3")); // 2, 해당 요소의 인덱스 반환
+          console.log(idxNum2);
+
+          $.merge(arr_2, arr_1); //왼쪽 배열 순서대로 배열 병합
+          console.log(arr_2);
+        });
       });
     </script>
   </head>
-  <body></body>
+  <body>
+    <h1>탐색 선택자</h1>
+    <ul id="menu1">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li id="list3">내용3</li>
+      <li>내용4</li>
+    </ul>
+  </body>
 </html>
