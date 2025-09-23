@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title> 이벤트 </title>  
-<script src="js/jquery.js"></script>
-<script>
-$(function( ) {
-	
-});
-</script>
-</head>
-<body>
-	<p><button class="btn1">Mouse Over/Mouse Out</button></p>
-	<p class="txt1">내용1</p>
-	<p><button class="btn2">Hover</button></p>
-	<p class="txt2">내용2</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <script src="js/jquery.js"></script>
+    <script>
+      $(function () {
+        $(".btn1").on({
+          mouseover: function () {
+            $(".txt1").css("background-color", "red");
+          },
+          mouseout: function () {
+            $(".txt1").css("background", "none"); // 배경색 제거 방법
+          },
+        });
+
+        // hover - 요소위에 마우스 포인터 떠있는것,  하나만 만들면 계속 유지된다. 두개만들어야 된다
+        $(".btn2").hover(
+          function () {
+            //마우스 올라왔을 때 이벤트 처리
+            $(".txt2").css("background-color", "aqua");
+          },
+          function () {
+            // 마우스가 빠져나갔을 대 이벤트 처리
+            $(".txt2").css("background", "none"); //배경색 제거
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <p><button class="btn1">Mouse Over/Mouse Out</button></p>
+    <p class="txt1">내용1</p>
+    <p><button class="btn2">Hover</button></p>
+    <p class="txt2">내용2</p>
+  </body>
 </html>
