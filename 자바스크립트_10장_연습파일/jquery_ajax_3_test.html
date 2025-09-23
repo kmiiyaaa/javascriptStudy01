@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title> Ajax </title>
-<script src="js/jquery.js"></script>
-<script>
-$(function() {
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax</title>
+    <script src="js/jquery.js"></script>
+    <script>
+      $(function () {
+        $.ajax({
+          url: "js/dataset.xml", //서버에 데이터 요청 url
+          dataType: "xml",
+          success: function (data) {
+            var $data = $(data).find("record"); // <record> 태그 찾기 -> record객체 참조
 
-});
-</script>
-</head>
-<body>
-	<div class="wrap"></div>
-</body>
+            if ($data.length > 0) {
+              // null값 방지
+              var tb = $("<table />"); // 테이블 태그 선언
+
+              $.each($data, function (i, o) {
+                var $id = $(o).find("id").text();
+                var $first_name = $(o).find("first_name").text();
+                var $last_name = $(o).find("last_name").text();
+                var $email = $(o).find("email").text();
+                var $gender = $(o).find("gender").text();
+                var $ip_address = $(o).find("ip_address").text();
+
+                var row = $("<tr />").append(
+                  $("<td />").text($id),
+                  $("<td />").text($first_name),
+                  $("<td />").text($last_name),
+                  $("<td />").text($email),
+                  $("<td />").text($gender),
+                  $("<td />").text($ip_address)
+                );
+                tb.append(row); //테이블 태그에 <tr>태그 넣기
+              });
+              $(".wrap").append(tb);
+            }
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrap"></div>
+  </body>
 </html>
